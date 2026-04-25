@@ -2,10 +2,10 @@ import axios from 'axios'
 
 // ─────────────────────────────────────────────
 // Axios instance — all API calls go through this
-// Backend is hosted on Render
+// VITE_BACKEND_URL is set in Vercel environment variables
 // ─────────────────────────────────────────────
 const apiClient = axios.create({
-  baseURL: 'https://jobbridge-ai.onrender.com',
+  baseURL: import.meta.env.VITE_BACKEND_URL || 'https://jobbridge-ai.onrender.com',
   timeout: 60000,  // 60 seconds — AI calls can be slow
   headers: {
     'Content-Type': 'application/json',
