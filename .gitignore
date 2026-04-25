@@ -1,0 +1,21 @@
+﻿# env (never commit secrets)
+.env
+.env.*
+!.env.example
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+
+# databases / local state
+*.db
+
+# node
+node_modules/
+dist/
+build/
+
+# OS/editor
+.DS_Store
+.vscode/

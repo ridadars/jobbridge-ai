@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --black:        #020617;
+  --bg-0:         #020617;
+  --bg-1:         #050e1f;
+  --bg-2:         #081225;
+  --bg-3:         #0b1d3a;
+  --bg-4:         #0f2347;
+
+  --border-dim:   rgba(255,255,255,0.05);
+  --border-mid:   rgba(255,255,255,0.08);
+  --border-hi:    rgba(255,216,77,0.28);
+
+  --yellow:       #FFD84D;
+  --yellow-mid:   #FACC15;
+  --yellow-dim:   rgba(255,216,77,0.15);
+  --yellow-glow:  rgba(255,216,77,0.08);
+
+  --text-0:       #ffffff;
+  --text-1:       #F8FAFC;
+  --text-2:       rgba(255,255,255,0.72);
+  --text-3:       rgba(255,255,255,0.45);
+  --text-4:       rgba(255,255,255,0.2);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  font-family: 'Inter', sans-serif;
+  color: var(--text-1);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: none;
+}
+
+#root { position: relative; z-index: 1; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-1); }
+::-webkit-scrollbar-thumb { background: rgba(255,216,77,0.3); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--yellow); }
+
+/* ── Typography helpers ── */
+.font-display { font-family: 'Playfair Display', serif; }
+.font-mono    { font-family: 'JetBrains Mono', monospace; }
+
+/* ── Card ── */
+.jb-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-mid);
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+.jb-card:hover {
+  border-color: var(--border-hi);
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-4px);
+}
+
+/* ── Input ── */
+.jb-input {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-mid);
+  border-radius: 10px;
+  color: var(--text-1);
+  padding: 12px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.jb-input:focus {
+  border-color: rgba(255,216,77,0.5);
+  box-shadow: 0 0 0 3px rgba(255,216,77,0.08);
+}
+.jb-input::placeholder { color: var(--text-4); }
+
+/* ── Buttons ── */
+.jb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 12px 24px;
+}
+
+.jb-btn-primary {
+  background: var(--yellow);
+  color: #111827;
+  box-shadow: 0 4px 20px rgba(255,216,77,0.2);
+}
+.jb-btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255,216,77,0.3);
+}
+.jb-btn-primary:active:not(:disabled) { transform: translateY(0); }
+.jb-btn-primary:disabled {
+  background: var(--bg-4);
+  color: var(--text-4);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.jb-btn-ghost {
+  background: rgba(255,255,255,0.03);
+  color: var(--text-2);
+  border: 1px solid var(--border-mid);
+}
+.jb-btn-ghost:hover {
+  border-color: rgba(255,255,255,0.16);
+  color: var(--text-0);
+  background: rgba(255,255,255,0.08);
+}
+
+/* ── Label ── */
+.jb-label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  font-weight: 600;
+}
+
+/* ── Progress bar ── */
+.jb-progress {
+  height: 2px;
+  background: var(--border-mid);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.jb-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--yellow-mid), var(--yellow));
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+/* ── Section divider ── */
+.jb-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-hi), transparent);
+  margin: 24px 0;
+}
+
+/* ── Status dot ── */
+.jb-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--yellow);
+  display: inline-block;
+  animation: jb-pulse 2.4s ease-in-out infinite;
+}
+
+/* ── Badge ── */
+.jb-badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,216,77,0.3);
+  color: var(--yellow);
+  background: var(--yellow-glow);
+}
+
+/* ── Error banner ── */
+.jb-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(248,113,113,0.08);
+  border: 1px solid rgba(248,113,113,0.25);
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: #fca5a5;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* ── Animations ── */
+@keyframes jb-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.8); }
+}
+@keyframes jb-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes jb-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.jb-fade-up  { animation: jb-fade-up 0.6s cubic-bezier(0.22,1,0.36,1) both; }
+.jb-delay-1  { animation-delay: 0.08s; }
+.jb-delay-2  { animation-delay: 0.16s; }
+.jb-delay-3  { animation-delay: 0.24s; }
