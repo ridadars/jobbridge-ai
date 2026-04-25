@@ -1,22 +1,22 @@
-# 🚀 JobBridge AI — From Graduate to Job-Ready
+# JobBridge AI — From Graduate to Job-Ready
 
 An AI-powered web app that helps university students and graduates become job-ready.
 Built with FastAPI + React + Groq (Llama 3 70B).
 
 ---
 
-## ✨ Features
+## Features
 
 | Feature | Description |
 |---|---|
-| 📄 CV Analyzer | Upload PDF → AI feedback on strengths, weaknesses, missing skills |
-| 🎤 Mock Interview | Enter job role → 4 AI questions → answer → get feedback |
-| 💼 LinkedIn Optimizer | Paste summary → AI rewrites it professionally |
-| 📊 Skills Gap | Paste CV + target role → see what you have vs. need |
+| CV Analyzer | Upload PDF → AI feedback on strengths, weaknesses, missing skills |
+| Mock Interview | Enter job role → 4 AI questions → answer → get feedback |
+| LinkedIn Optimizer | Paste summary → AI rewrites it professionally |
+| Skills Gap | Paste CV + target role → see what you have vs. need |
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Backend:** Python 3.10+, FastAPI, SQLite, PyMuPDF, Groq API
 - **Frontend:** React 18, Vite, Tailwind CSS v3, Axios, React Router v6
