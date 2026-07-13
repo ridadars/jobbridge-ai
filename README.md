@@ -363,7 +363,10 @@ jobbridge-ai/
 │   └── package.json
 └── .env.example
 ```
+## Contributors
 
+Ahmed Faraz
+Rida
 ---
 
 Built for hackathon  • Powered by [Groq](https://groq.com) + Llama 3 70B
